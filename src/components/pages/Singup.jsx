@@ -4,13 +4,14 @@ import Checkbox from "../Checkbox";
 import Form from "../Form";
 import Illustration from "../Illustration";
 import TextInput from "../TextInput";
+import logo from '../../assets/images/signup.svg'
 
 export default function Signup() {
   return (
     <>
       <h1>Create an account</h1>
       <div className="column">
-        <Illustration />
+        <Illustration  src= {logo} alt='Signup'/>
         <Form className={classes.signup} action="#">
           <TextInput type="text" placeholder="Enter Your Name" icon="person" />
           <TextInput
