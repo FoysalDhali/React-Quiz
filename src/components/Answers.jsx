@@ -9,11 +9,6 @@ export default function Answers() {
       <Checkbox className={classes.answer} text=' A New Hope 1' />
       <Checkbox className={classes.answer} text=' A New Hope 1' />
       <Checkbox className={classes.answer} text=' A New Hope 1' />
-      <Checkbox className={classes.answer} text=' A New Hope 1' />
-      <Checkbox className={classes.answer} text=' A New Hope 1' />
-      <Checkbox className={classes.answer} text=' A New Hope 1' />
-      <Checkbox className={classes.answer} text=' A New Hope 1' />
-      <Checkbox className={classes.answer} text=' A New Hope 1' />
     </div>
   );
 }
