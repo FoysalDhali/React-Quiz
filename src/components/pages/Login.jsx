@@ -1,10 +1,6 @@
 import logo from "../../assets/images/login.svg";
-import classes from "../../styles/Login.module.css";
-import Form from "../Form";
 import Illustration from "../Illustration";
-import TextInput from "../TextInput";
-import Button from "../Button";
-import {Link} from "react-router-dom"
+import LoginForm from "../LoginForm";
 
 export default function Login() {
   return (
@@ -12,12 +8,7 @@ export default function Login() {
       <h1>Login to your account</h1>
       <div className="column">
         <Illustration src={logo} alt="Login" />
-        <Form className={classes.login} action="#">
-          <TextInput type='email' placeholder='Enter your email' icon='alternate_email' />
-          <TextInput type='password' placeholder='Enter your password' icon='lock' />
-          <Button>Login</Button>
-          <div className="info">Don't have an account? <Link to="/signup">Signup</Link> instead.</div>
-        </Form>
+        <LoginForm />
       </div>
     </>
   );

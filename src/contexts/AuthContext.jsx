@@ -6,13 +6,13 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import "../firebase";
 
 const AuthContext = React.createContext();
-
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -53,7 +53,7 @@ export function AuthProvider({ children }) {
 
   function Logout() {
     const auth = getAuth();
-    return Logout(auth);
+    return signOut(auth);
   }
 
   const value = {
