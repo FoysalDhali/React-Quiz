@@ -9,7 +9,9 @@ export default function Videos() {
   const { videos, error, loading, hasMore } = useVideoList(page);
   return (
     <div>
-      {loading && <h2 style={{margin: '0 auto', display: 'table'}}>Loading....</h2>}
+      {loading && (
+        <h2 style={{ margin: "0 auto", display: "table" }}>Loading....</h2>
+      )}
       {videos.length > 0 && (
         <InfiniteScroll
           className="videos"
@@ -20,16 +22,24 @@ export default function Videos() {
         >
           {videos.map((video) =>
             video.noq > 0 ? (
-              <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID}>
+              <Link
+                to={{pathname: `/quiz/${video.youtubeID}`}}
+                state={{ videoTitle: video.title }}
+                key={video.youtubeID}
+              >
                 <Video
                   noq={video.noq}
                   title={video.title}
                   ID={video.youtubeID}
-                  
                 />
               </Link>
             ) : (
-              <Video noq={video.noq} title={video.title} ID={video.youtubeID} key={video.youtubeID} />
+              <Video
+                noq={video.noq}
+                title={video.title}
+                ID={video.youtubeID}
+                key={video.youtubeID}
+              />
             )
           )}
         </InfiniteScroll>

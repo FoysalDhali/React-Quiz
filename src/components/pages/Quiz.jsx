@@ -74,10 +74,9 @@ export default function Quiz() {
     const resultRef = ref(db, `result/${uid}/${[id]}`);
     await set(resultRef, qna);
 
-    navigate({
-      pathname: `/result/${id}`,
+    navigate(`/result/${id}`, {
       state: {
-        user: qna,
+        qna,
       },
     });
   }
@@ -94,6 +93,7 @@ export default function Quiz() {
           <h1>{qna[currentQuestion].title}</h1>
           <h4>Question can have multiple answers</h4>
           <Answers
+            input={true}
             options={qna[currentQuestion].options}
             handleChange={handleAnswerChange}
           />
@@ -103,7 +103,7 @@ export default function Quiz() {
             submit={submit}
             progress={progress}
           />
-          <MiniPlayer />
+          <MiniPlayer title={qna[currentQuestion].title} />
         </>
       )}
     </>
